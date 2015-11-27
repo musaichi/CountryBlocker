@@ -1,2 +1,2 @@
 # CountryBlocker
-Blocked Security High Risk Country.
+PocketMine Blocked Security High Risk Country plugin.
