@@ -44,5 +44,10 @@ if($co == sy){
 $p->close("","§aكان بلدكم بسبب الدول عالية المخاطر الأمنية، ركلة.");
 }
 }
+if($this->c->so == true){
+if($c == so){
+$p->close("",Your dalka sababtoo ah dalalka khatarta sare ammaanka, ayaa laad");
+}
+}
 }
 }
