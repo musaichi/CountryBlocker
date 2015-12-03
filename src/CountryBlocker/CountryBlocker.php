@@ -27,7 +27,12 @@ $this->getServer()->getPluginManager()->registerEvents($this, $this);
 
 public function onPreLogin(PlayerPreLoginEvent $event){
 $p = $event->getPlayer();
-$i = $p->getAdress();
-$country = geoip_country_code_by_name($i);
+$i = $p->getAddress();
+$co = geoip_country_code_by_name($i);
+if($this->c->cn = true){
+if($co = cn){
+$p->close("","§a");
+}
+}
 }
 }
