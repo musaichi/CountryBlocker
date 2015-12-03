@@ -21,10 +21,13 @@ $this->c = new Config($this->getDataFolder()."country.yml", Config::YAML, array(
 "sy" => true,
 "so" => true,
 ));
-$this->system->save();
+$this->c->save();
 $this->getServer()->getPluginManager()->registerEvents($this, $this);
 }
 
 public function onPreLogin(PlayerPreLoginEvent $event){
+$p = $event->getPlayer();
+$i = $p->getAdress();
+$country = geoip_country_code_by_name($i);
 }
 }
