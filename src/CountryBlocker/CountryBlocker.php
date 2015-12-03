@@ -29,9 +29,19 @@ public function onPreLogin(PlayerPreLoginEvent $event){
 $p = $event->getPlayer();
 $i = $p->getAddress();
 $co = geoip_country_code_by_name($i);
-if($this->c->cn = true){
-if($co = cn){
-$p->close("","§a");
+if($this->c->cn == true){
+if($co == cn){
+$p->close("","§a你因为安全高风险国家的国家，一直踢。");
+}
+}
+if($this->c->in == true){
+if($co == in){
+$p->close("","§aक्योंकि सुरक्षा के उच्च जोखिम वाले देशों के अपने देश, लात कर दिया गया है");
+}
+}
+if($this->c->sy == true){
+if($co == sy){
+$p->close("","§aكان بلدكم بسبب الدول عالية المخاطر الأمنية، ركلة.");
 }
 }
 }
