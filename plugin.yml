@@ -1,0 +1,7 @@
+name: CountryBlocker
+api: [1.0.0] 
+version: 1.0.0 
+load: POSTWORLD 
+main: CountryBlocker\CountryBlocker
+author: musaichi 
+website: http://www.musaichi.tk 
