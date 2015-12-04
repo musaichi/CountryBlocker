@@ -20,6 +20,7 @@ $this->c = new Config($this->getDataFolder()."country.yml", Config::YAML, array(
 "in" => true,
 "sy" => true,
 "so" => true,
+"kr" => true,
 ));
 $this->c->save();
 $this->getServer()->getPluginManager()->registerEvents($this, $this);
@@ -47,6 +48,11 @@ $p->close("","§aكان بلدكم بسبب الدول عالية المخاطر
 if($this->c->so == true){
 if($c == so){
 $p->close("",Your dalka sababtoo ah dalalka khatarta sare ammaanka, ayaa laad");
+}
+}
+if($this->c->kr == true){
+if($c == kr){
+$p->close("","당신의 나라는 보안 위험이 높은 국가이기 때문에, kick되었습니다.");
 }
 }
 }
