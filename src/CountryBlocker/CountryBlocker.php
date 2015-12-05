@@ -47,7 +47,7 @@ $p->close("","§aكان بلدكم بسبب الدول عالية المخاطر
 }
 if($this->c->so == true){
 if($c == so){
-$p->close("",Your dalka sababtoo ah dalalka khatarta sare ammaanka, ayaa laad");
+$p->close("","Your dalka sababtoo ah dalalka khatarta sare ammaanka, ayaa laad");
 }
 }
 if($this->c->kr == true){
