@@ -4,11 +4,7 @@ namespace CountryBlocker;
 
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
-use pocketmine\item\Item;
 use pocketmine\event\player\PlayerPreLoginEvent;
-use pocketmine\Player;
-use pocketmine\Server;
-use pocketmine\utils\textFormat;
 use pocketmine\utils\Config;
 
 class CountryBlocker extends pluginBase implements Listener{
