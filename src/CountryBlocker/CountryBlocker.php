@@ -10,9 +10,10 @@ use pocketmine\utils\Config;
 class CountryBlocker extends pluginBase implements Listener{
 
     public function onEnable() {
+        $this->getServer()->getPluginManager()->registerEvents($this, $this);
         if (!file_exists($this->getDataFolder())) @mkdir($this->getDataFolder(), 0755, true);
         $c = new Config($this->getDataFolder()."country.yml", Config::YAML, array(
-        	"en" => true,
+            "en" => true,
             "cn" => true,
             "in" => true,
             "sy" => true,
@@ -21,14 +22,13 @@ class CountryBlocker extends pluginBase implements Listener{
             ));
         $c->save();
         $this->c = $c->getAll();
-        $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->reason = [
-        	"en" => "§aYou are not allowed to get in as of your living country",
-        	"cn" => "§a你因为安全高风险国家的国家，一直踢。",
-        	"in" => "§aक्योंकि सुरक्षा के उच्च जोखिम वाले देशों के अपने देश, लात कर दिया गया है",
-        	"sy" => "§aكان بلدكم بسبب الدول عالية المخاطر الأمنية، ركلة.",
-        	"so" => "§aYour dalka sababtoo ah dalalka khatarta sare ammaanka, ayaa laad",
-        	"kr" => "§a당신의 나라는 보안 위험이 높은 국가이기 때문에, kick되었습니다."
+            "en" => "§aYou are not allowed to get in as of your living country",
+            "cn" => "§a你因为安全高风险国家的国家，一直踢。",
+            "in" => "§aक्योंकि सुरक्षा के उच्च जोखिम वाले देशों के अपने देश, लात कर दिया गया है",
+            "sy" => "§aكان بلدكم بسبب الدول عالية المخاطر الأمنية، ركلة.",
+            "so" => "§aYour dalka sababtoo ah dalalka khatarta sare ammaanka, ayaa laad",
+            "kr" => "§a당신의 나라는 보안 위험이 높은 국가이기 때문에, kick되었습니다."
         ];
     }
 
@@ -37,8 +37,8 @@ class CountryBlocker extends pluginBase implements Listener{
         $i = $p->getAddress();
         $co = geoip_country_code_by_name($i);
         if($this->c[$co]){
-        	$p->close("", $this->reason[$co]);
-        	$event->setCancelled(true);
+            $p->close("", $this->reason[$co]);
+            $event->setCancelled(true);
         }
     }
 }
