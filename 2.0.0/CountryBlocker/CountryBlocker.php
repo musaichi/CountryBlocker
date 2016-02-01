@@ -1,10 +1,14 @@
 <?php
+
 namespace CountryBlocker;
+
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\player\PlayerPreLoginEvent;
 use pocketmine\utils\Config;
+
 class CountryBlocker extends pluginBase implements Listener{
+
     public function onEnable() {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         if (!file_exists($this->getDataFolder())) @mkdir($this->getDataFolder(), 0755, true);
@@ -31,10 +35,12 @@ class CountryBlocker extends pluginBase implements Listener{
             "kr" => "§a당신의 나라는 보안 위험이 높은 국가이기 때문에, kick되었습니다."
         ];
     }
+
     public function onPreLogin(PlayerPreLoginEvent $event){
         $p = $event->getPlayer();
         $i = $p->getAddress();
-        $co = geoip_country_code_by_name($i);
+        $location = json_decode(file_get_contents('http://ip-api.com/json/' . $i));
+        $c = $location->countryCode;
         if($this->c[$co]){
             $p->close("", $this->reason[$co]);
             $event->setCancelled(true);
