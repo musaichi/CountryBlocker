@@ -3,7 +3,7 @@ PocketMine-MPでセキリティハイリスク国をブロックするプラグ�
 (this is pocketmine-mp kicking player from security high risk country plugin.)
 ##バージョンの違い(what difference 1.0.0 and 2.0.0?)
 Version1.0.0の方が動作が軽快ですが、geoipのインストールが必要になります。<br>
-(1,0,0 soft better than 2,0,0 but 1,0,0 must install geoip.)<br>
+(1,0,0 is soft better than 2,0,0.but 1,0,0 must install geoip.)<br>
 Version2.0.0は何もしなくて構いません。<br>
 (2,0,0 haven't install geoip.)
 ##使い方(how to use)
