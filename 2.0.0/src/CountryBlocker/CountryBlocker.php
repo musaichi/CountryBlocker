@@ -39,7 +39,7 @@ class CountryBlocker extends pluginBase implements Listener{
     public function onPreLogin(PlayerPreLoginEvent $event){
         $p = $event->getPlayer();
         $i = $p->getAddress();
-        $location = json_decode(file_get_contents('http://ip-api.com/json/' . $i));
+        $location = json_decode(file_get_contents('http://ip-api.com/json/', $i));
         $c = $location->countryCode;
         if($this->c[$co]){
             $p->close("", $this->reason[$co]);
