@@ -21,6 +21,7 @@ class CountryBlocker extends pluginBase implements Listener{
             "sy" => true,
             "so" => true,
             "kr" => true,
+            "ru" => true,
             ));
         $c->save();
         $this->c = $c->getAll();
@@ -32,7 +33,8 @@ class CountryBlocker extends pluginBase implements Listener{
             "in" => "§aक्योंकि सुरक्षा के उच्च जोखिम वाले देशों के अपने देश, लात कर दिया गया है",
             "sy" => "§aكان بلدكم بسبب الدول عالية المخاطر الأمنية، ركلة.",
             "so" => "§aYour dalka sababtoo ah dalalka khatarta sare ammaanka, ayaa laad",
-            "kr" => "§a당신의 나라는 보안 위험이 높은 국가이기 때문에, kick되었습니다."
+            "kr" => "§a당신의 나라는 보안 위험이 높은 국가이기 때문에, kick되었습니다.",
+            "ru" => "§aВы не можете войти из вашей страны.".
         ];
     }
 
