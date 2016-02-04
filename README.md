@@ -8,7 +8,7 @@ Version2.0.0は何もしなくて構いません。<br>
 (2,0,0 haven't install geoip.)
 ##使い方(how to use)
 country.ymlが生成されますので、そこからブロックしたい国にtrueと記入してください。<br>
-(country.yml will generate.plz select you want to kick player from high risk country and set "true")
+(country.yml will generate.plz select you want to kick player from high risk country and set "true")<br>
 それ以外が記入されていると全てfalse判定になります。<br>
 (if you don't set "true",it won't kick player from that country.)
 ##ライセンス(LICENCE)
@@ -16,4 +16,5 @@ LGPLv3を適用します。<br>
 this plugin using LGPLv3!
 ##special thanks
 mfmfneko(code Brevity)<br>
-0929hitoshi(code Brevity)
+0929hitoshi(code Brevity)<br>
+Mrdoni98(Add Russian)<br>
