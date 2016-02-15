@@ -12,7 +12,7 @@ class CountryBlocker extends pluginBase implements Listener{
     public function onEnable() {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         if (!file_exists($this->getDataFolder())) @mkdir($this->getDataFolder(), 0755, true);
-        $c = new Config($this->getDataFolder()."country.yml", Config::YAML, array(
+        $this->country = new Config($this->getDataFolder()."country.yml", Config::YAML, array(
             "en" => false,
             "us" => false,
             "fr" => false,
@@ -23,8 +23,7 @@ class CountryBlocker extends pluginBase implements Listener{
             "kr" => true,
             "ru" => true,
             ));
-        $c->save();
-        $this->c = $c->getAll();
+        $this->country->save();
         $this->reason = [
             "en" => "§aYou are not allowed to get in as of your living country",
             "us" => "§aYou are not allowed to get in as of your living country",
@@ -43,8 +42,8 @@ class CountryBlocker extends pluginBase implements Listener{
         $i = $p->getAddress();
         $location = json_decode(file_get_contents('http://ip-api.com/json/', $i));
         $c = $location->countryCode;
-        if($this->c[$co]){
-            $p->close("", $this->reason[$co]);
+        if($this->country->get($location) == false){
+            $p->close("", $this->reason[$c]);
             $event->setCancelled(true);
         }
     }
