@@ -33,8 +33,8 @@ class CountryBlocker extends pluginBase implements Listener{
             "sy" => "§aكان بلدكم بسبب الدول عالية المخاطر الأمنية، ركلة.",
             "so" => "§aYour dalka sababtoo ah dalalka khatarta sare ammaanka, ayaa laad",
             "kr" => "§a당신의 나라는 보안 위험이 높은 국가이기 때문에, kick되었습니다.",
-            "ru" => "§aВы не можете войти из вашей страны.".
-        ];
+            "ru" => "§aВы не можете войти из вашей страны.",
+            ];
     }
 
     public function onPreLogin(PlayerPreLoginEvent $event){
@@ -42,7 +42,7 @@ class CountryBlocker extends pluginBase implements Listener{
         $i = $p->getAddress();
         $location = json_decode(file_get_contents('http://ip-api.com/json/', $i));
         $c = $location->countryCode;
-        if($this->country->get($location) == false){
+        if($this->country->get($c) == false){
             $p->close("", $this->reason[$c]);
             $event->setCancelled(true);
         }
