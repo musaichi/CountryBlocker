@@ -42,7 +42,7 @@ class CountryBlocker extends pluginBase implements Listener{
         $i = $p->getAddress();
         $location = json_decode(file_get_contents('http://ip-api.com/json/', $i));
         $c = $location->countryCode;
-        if($this->country->get($c) == false){
+        if($this->country->get($c) == true){
             $p->close("", $this->reason[$c]);
             $event->setCancelled(true);
         }
