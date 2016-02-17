@@ -16,18 +16,20 @@ class CountryBlocker extends pluginBase implements Listener{
             "en" => false,
             "us" => false,
             "fr" => false,
+            "ru" => false,
+            "jp" => false,
             "cn" => true,
             "in" => true,
             "sy" => true,
             "so" => true,
             "kr" => true,
-            "ru" => true,
             ));
         $this->country->save();
         $this->reason = [
             "en" => "§aYou are not allowed to get in as of your living country",
             "us" => "§aYou are not allowed to get in as of your living country",
             "fr" => "§aYou are not allowed to get in as of your living country",
+            "jp" => "§a貴方の国からは現在接続出来ません。",
             "cn" => "§a你因为安全高风险国家的国家，一直踢。",
             "in" => "§aक्योंकि सुरक्षा के उच्च जोखिम वाले देशों के अपने देश, लात कर दिया गया है",
             "sy" => "§aكان بلدكم بسبب الدول عالية المخاطر الأمنية، ركلة.",
