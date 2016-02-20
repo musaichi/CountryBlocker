@@ -13,16 +13,17 @@ class CountryBlocker extends pluginBase implements Listener{
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         if (!file_exists($this->getDataFolder())) @mkdir($this->getDataFolder(), 0755, true);
         $this->country = new Config($this->getDataFolder()."country.yml", Config::YAML, array(
-            "en" => false,
-            "us" => false,
-            "fr" => false,
-            "ru" => false,
-            "jp" => false,
+            "en" => true,
+            "us" => true,
+            "fr" => true,
+            "ru" => true,
+            "jp" => true,
             "cn" => true,
             "in" => true,
             "sy" => true,
             "so" => true,
             "kr" => true,
+            "kp" => true,
             ));
         $this->country->save();
         $this->reason = [
@@ -36,6 +37,7 @@ class CountryBlocker extends pluginBase implements Listener{
             "so" => "§aYour dalka sababtoo ah dalalka khatarta sare ammaanka, ayaa laad",
             "kr" => "§a당신의 나라는 보안 위험이 높은 국가이기 때문에, kick되었습니다.",
             "ru" => "§aВы не можете войти из вашей страны.",
+            "kp" => "§a당신의 나라는 보안 위험이 높은 국가이기 때문에, kick되었습니다.",
             ];
     }
 
@@ -44,7 +46,7 @@ class CountryBlocker extends pluginBase implements Listener{
         $i = $p->getAddress();
         $location = json_decode(file_get_contents('http://ip-api.com/json/', $i));
         $c = $location->countryCode;
-        if($this->country->get($c) == true){
+        if($this->country->get($c) == false){
             $p->close("", $this->reason[$c]);
             $event->setCancelled(true);
         }
