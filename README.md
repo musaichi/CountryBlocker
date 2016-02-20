@@ -11,6 +11,7 @@ country.ymlが生成されますので、そこからブロックしたい国に
 (country.yml will generate.plz select you want to kick player from high risk country and set "true")<br>
 それ以外が記入されていると全てfalse判定になります。<br>
 (if you don't set "true",it won't kick player from that country.)
+###翻訳のお手伝いをお願いします！(Please help translation!)
 ##ライセンス(LICENCE)
 LGPLv3を適用します。<br>
 this plugin using LGPLv3!
