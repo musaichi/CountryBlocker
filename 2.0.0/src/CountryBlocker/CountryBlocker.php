@@ -49,6 +49,8 @@ class CountryBlocker extends pluginBase implements Listener{
         if($this->country->get($c) == false){
             $p->close("", $this->reason[$c]);
             $event->setCancelled(true);
+        }else{
+            $p->sendMessage("お使いの国からのログインは許可されております。ようこそ。");
         }
     }
 }
